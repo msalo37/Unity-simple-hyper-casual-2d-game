@@ -11,19 +11,32 @@ namespace Player
 
         private IPlayerMovement _playerMovement;
         private IPlayerTapAction _playerTapAction;
+        private IPlayerHoldAction _playerHoldAction;
 
         private void Start()
         {
             _playerMovement = GetComponent<IPlayerMovement>();
             _playerTapAction = GetComponent<IPlayerTapAction>();
+            _playerHoldAction = GetComponent<IPlayerHoldAction>();
         }
 
         private void Update()
         {
-            _playerMovement.Move(player);
+            if (_playerMovement != null)
+                _playerMovement.Move(player);
 
             if (Input.GetMouseButtonDown(0))
-                _playerTapAction.DoAction(player);
+            {
+                if (_playerTapAction != null)
+                    _playerTapAction.DoAction(player);
+                
+                if (_playerHoldAction != null)
+                    _playerHoldAction.ClickDown();
+            }
+
+            if (Input.GetMouseButtonUp(0))
+                if (_playerHoldAction != null)
+                    _playerHoldAction.ClickUp();
         }
     }
 }
