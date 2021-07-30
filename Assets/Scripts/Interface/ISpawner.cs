@@ -1,4 +1,6 @@
-﻿public interface ISpawner
+﻿using UnityEngine;
+
+public interface ISpawner
 {
-    Enemy CreateEnemy();
+    GameObject Create();
 }

@@ -7,11 +7,11 @@ public class SpawnerAroundObject : MonoBehaviour, ISpawner
 
     [SerializeField] private float radius;
     
-    public Enemy CreateEnemy()
+    public GameObject Create()
     {
         float angle = Random.Range(0, 360) * Mathf.PI * 2f / 8;
         Vector3 newPos = new Vector3(Mathf.Cos(angle) * radius, Mathf.Sin(angle) * radius, 1);
         GameObject go = Instantiate(enemyPrefab, newPos, Quaternion.identity);
-        return go.GetComponent<Enemy>();
+        return go;
     }
 }

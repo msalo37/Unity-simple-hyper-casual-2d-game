@@ -24,7 +24,7 @@ public class EnemySpawner : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(spawnDelay);
-            Enemy enemy = _spawner.CreateEnemy();
+            Enemy enemy = _spawner.Create().GetComponent<Enemy>();
             enemy.SetPoint(endCheckpoints[Random.Range(0, endCheckpoints.Length)].position);
         }
     }
