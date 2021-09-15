@@ -1,28 +1,22 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Numerics;
 using DG.Tweening;
 using UnityEngine;
 using Vector3 = UnityEngine.Vector3;
 
-public class Enemy : MonoBehaviour
+public class MovingObject : MonoBehaviour
 {
-    [SerializeField] private float rotationSpeed, moveSpeed;
+    [SerializeField] private float moveSpeed;
 
-    private Vector3 endPos;
+    [SerializeField] private Vector3 endPos = Vector3.zero;
 
     private void Update()
     {
         transform.position = Vector3.MoveTowards(transform.position, endPos, moveSpeed * Time.deltaTime);
-        
-        transform.Rotate(new Vector3(0,0, rotationSpeed * Time.deltaTime));
-        
+
         if (endPos == transform.position)
             DestroyMe();
     }
 
-    public void SetPoint(Vector3 vec3)
+    public void SetEndPoint(Vector3 vec3)
     {
         endPos = vec3;
     }
