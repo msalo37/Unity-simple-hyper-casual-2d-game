@@ -640,6 +640,7 @@ MonoBehaviour:
   scoreText: {fileID: 871689718}
   animationScale: {x: 1.1, y: 1.1, z: 1.1}
   animationSeconds: 0.2
+  hideIfScoreIsZero: 1
 --- !u!1 &881034934
 GameObject:
   m_ObjectHideFlags: 0

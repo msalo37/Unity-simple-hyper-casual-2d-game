@@ -11,6 +11,8 @@ public class ScoreToText : MonoBehaviour
     [Space]
     [SerializeField] private Vector3 animationScale = new Vector3(1.1f, 1.1f, 1.1f);
     [SerializeField] private float animationSeconds = 0.2f;
+    [Space] 
+    [SerializeField] private bool hideIfScoreIsZero;
     
     private void Awake()
     {
@@ -28,6 +30,11 @@ public class ScoreToText : MonoBehaviour
         ScoreManager.Instance.onScoreUpdated -= UpdateText;
     }
 
+    private void Start()
+    {
+        UpdateText(ScoreManager.Instance.GetScore());
+    }
+
     private void UpdateText(int score)
     {
         if (scoreText == null)
@@ -35,6 +42,11 @@ public class ScoreToText : MonoBehaviour
             Debug.LogWarning("Score text is null!");
             return;
         }
+
+        if (hideIfScoreIsZero == true && score == 0)
+            scoreText.enabled = false;
+        else
+            scoreText.enabled = true;
         
         scoreText.text = score.ToString();
 
