@@ -10,7 +10,7 @@ public class CoinCollision : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            if (ScoreManager.instance != null) ScoreManager.instance.IncreaseScore();
+            if (ScoreManager.Instance != null) ScoreManager.Instance.IncreaseScore();
             transform.DOScale(new Vector3(0, 0, 0), 0.2f).OnComplete(delegate
             {
                 transform.DOKill();
