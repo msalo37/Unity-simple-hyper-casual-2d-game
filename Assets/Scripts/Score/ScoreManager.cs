@@ -27,7 +27,7 @@ public class ScoreManager : MonoBehaviour
         ResetScore();
     }
 
-    private void ResetScore()
+    public void ResetScore()
     {
         score = 0;
         onScoreUpdated?.Invoke(score);

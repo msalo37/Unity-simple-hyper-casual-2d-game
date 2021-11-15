@@ -5,7 +5,7 @@ using Vector3 = UnityEngine.Vector3;
 
 public class PlayerMovementWithCheckpointsDirection : PlayerMovementCheckpoint, IPlayerTapAction
 {
-    public void DoAction(Transform player)
+    public void OnTap(Transform player)
     {
         ChangeOffset();
     }

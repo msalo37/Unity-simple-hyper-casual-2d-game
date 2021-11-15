@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface IPlayerTapAction
 {
-    void DoAction(Transform player);
+    void OnTap(Transform player);
 }

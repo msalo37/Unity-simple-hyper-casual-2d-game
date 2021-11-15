@@ -28,15 +28,15 @@ namespace Player
             if (Input.GetMouseButtonDown(0))
             {
                 if (_playerTapAction != null)
-                    _playerTapAction.DoAction(player);
+                    _playerTapAction.OnTap(player);
                 
                 if (_playerHoldAction != null)
-                    _playerHoldAction.ClickDown();
+                    _playerHoldAction.OnTapDown();
             }
 
             if (Input.GetMouseButtonUp(0))
                 if (_playerHoldAction != null)
-                    _playerHoldAction.ClickUp();
+                    _playerHoldAction.OnTapUp();
         }
     }
 }

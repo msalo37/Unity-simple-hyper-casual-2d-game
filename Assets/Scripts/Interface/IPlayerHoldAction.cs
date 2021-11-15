@@ -1,6 +1,6 @@
 public interface IPlayerHoldAction
 {
-    void ClickDown();
+    void OnTapDown();
 
-    void ClickUp();
+    void OnTapUp();
 }

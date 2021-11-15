@@ -23,12 +23,12 @@ public class PlayerMovementWithCheckpointsSlowdown : PlayerMovementCheckpoint, I
         speed *= speedMultiplier;
     }
 
-    public void ClickDown()
+    public void OnTapDown()
     {
         Slowdown();
     }
 
-    public void ClickUp()
+    public void OnTapUp()
     {
         RestoreSpeed();
     }
