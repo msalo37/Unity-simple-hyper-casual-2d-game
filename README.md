@@ -1,4 +1,4 @@
-##Simple hyper casual 2d game
+## Simple hyper casual 2d game
 ____
 
 This repository will give the opportunity to create games similar to [this](https://www.pinterest.ru/johnwllm/_created/).
